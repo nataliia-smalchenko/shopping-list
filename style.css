@@ -1,0 +1,80 @@
+ul,
+li {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.shopping-list {
+  padding-left: 40px;
+  padding-top: 40px;
+}
+
+.shopping-list-item {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.shopping-list-item-label {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  font-size: 18px;
+  font-family: sans-serif;
+}
+.shopping-list-item-icon {
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+  padding: 8px;
+  cursor: pointer;
+  fill: none;
+  stroke: rgb(151, 4, 213);
+}
+
+.checkbox:checked + .shopping-list-item-label > .shopping-list-item-icon {
+  fill: rgb(151, 4, 213);
+}
+
+.checkbox:checked + .shopping-list-item-label {
+  color: rgb(169, 83, 207);
+}
+
+.shopping-list-remove {
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  display: block;
+}
+
+.shopping-list-remove-icon {
+  fill: rgb(165, 168, 167);
+  width: 32px;
+  height: 32px;
+  box-sizing: border-box;
+  padding: 8px;
+}
+
+.shopping-list-remove:hover .shopping-list-remove-icon,
+.shopping-list-remove:active .shopping-list-remove-icon,
+.shopping-list-remove:focus .shopping-list-remove-icon {
+  fill: rgb(84, 85, 85);
+}

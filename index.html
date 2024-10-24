@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <ul class="shopping-list">
+      <li class="shopping-list-item">
+        <input
+          class="visually-hidden checkbox"
+          type="checkbox"
+          name="item1"
+          id="item1"
+          checked
+        />
+        <label class="shopping-list-item-label" for="item1">
+          <svg class="shopping-list-item-icon">
+            <use href="./sprite.svg#icon-star-full" />
+          </svg>
+          <span class="shopping-list-item-text">Milk</span>
+        </label>
+        <button class="shopping-list-remove">
+          <svg class="shopping-list-remove-icon">
+            <use href="./sprite.svg#icon-cross" />
+          </svg>
+        </button>
+      </li>
+      <li class="shopping-list-item">
+        <input
+          class="visually-hidden checkbox"
+          type="checkbox"
+          name="item2"
+          id="item2"
+        />
+        <label class="shopping-list-item-label" for="item2">
+          <svg class="shopping-list-item-icon">
+            <use href="./sprite.svg#icon-star-full" />
+          </svg>
+          <span class="shopping-list-item-text">Milk</span>
+        </label>
+        <button class="shopping-list-remove">
+          <svg class="shopping-list-remove-icon">
+            <use href="./sprite.svg#icon-cross" />
+          </svg>
+        </button>
+      </li>
+    </ul>
+    <div>
+      <input type="text" />
+      <button>Add</button>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
