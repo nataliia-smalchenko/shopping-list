@@ -1,4 +1,5 @@
-const API_URL = "https://6628960354afcabd07363870.mockapi.io/products";
+let API_URL = "http://localhost:3000/shopping-list";
+API_URL = "https://shopping-backend-ko5z.onrender.com/shopping-list";
 
 // Функція для отримання списку покупок з сервера
 async function fetchShoppingList() {
@@ -85,57 +86,37 @@ function displayShoppingList(items) {
 // Завантажуємо список покупок при завантаженні сторінки
 fetchShoppingList();
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+// Функція для додавання нового елемента до списку
+function addItem() {
+  const newItemInput = document.querySelector(".js-add-input");
+  const addButton = document.querySelector(".js-add-button");
+  const newItemName = newItemInput.value.trim();
 
-// // Функція для додавання нового елемента до списку
-// function addItem() {
-//   const newItemInput = document.getElementById("new-item");
-//   const newItemName = newItemInput.value.trim();
+  if (newItemName === "") {
+    alert("Введіть назву елемента");
+    return;
+  }
 
-//   if (newItemName === "") {
-//     alert("Введіть назву елемента");
-//     return;
-//   }
-
-//   fetch(API_URL, {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify({ name: newItemName, bought: false }),
-//   })
-//     .then((response) => {
-//       if (!response.ok) {
-//         throw new Error("Помилка при додаванні нового елемента");
-//       }
-//       return response.json();
-//     })
-//     .then(() => {
-//       fetchShoppingList();
-//       newItemInput.value = "";
-//     })
-//     .catch((error) => console.error("Помилка при додаванні елемента:", error));
-// }
+  fetch(API_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ name: newItemName, bought: false }),
+  })
+    .then((response) => {
+      addButton.disabled = true;
+      if (!response.ok) {
+        throw new Error("Помилка при додаванні нового елемента");
+      }
+      return response.json();
+    })
+    .then(() => {
+      fetchShoppingList();
+      newItemInput.value = "";
+    })
+    .catch((error) => console.error("Помилка при додаванні елемента:", error))
+    .finally(() => {
+      addButton.disabled = false;
+    });
+}

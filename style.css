@@ -52,6 +52,7 @@ li {
 
 .checkbox:checked + .shopping-list-item-label {
   color: rgb(169, 83, 207);
+  text-decoration: line-through;
 }
 
 .shopping-list-remove {
@@ -77,4 +78,37 @@ li {
 .shopping-list-remove:active .shopping-list-remove-icon,
 .shopping-list-remove:focus .shopping-list-remove-icon {
   fill: rgb(84, 85, 85);
+}
+
+.input {
+  margin-left: 40px;
+  width: 300px;
+  padding: 8px 12px;
+  font-size: 18px;
+  font-family: sans-serif;
+  border-radius: 8px;
+  border: 1px solid rgb(151, 4, 213);
+}
+.button {
+  background-color: rgb(151, 4, 213);
+  color: white;
+  font-size: 18px;
+  font-family: sans-serif;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-left: 16px;
+  border: none;
+  cursor: pointer;
+}
+.button:hover,
+.button:focus,
+.button:active {
+  background-color: rgb(121, 2, 171);
+}
+.button:disabled {
+  background-color: rgb(91, 91, 91);
+}
+
+.add-form {
+  margin-bottom: 60px;
 }
